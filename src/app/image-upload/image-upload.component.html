@@ -1,0 +1,10 @@
+<p>image-upload works!</p>
+
+<input type="file" (change)="onFileSelected($event)" accept="*.png.jpg"/>
+
+<button type="button" (click)="onUpload()">Upload</button>
+<br><br>
+<img [src]="url" height="200px">
+
+<input type="file" (change)="onResize($event)" accept="*.png.jpg"/>
+
