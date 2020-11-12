@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+
+image-cropper {
+
+    width:10px;
+    height: 50vh;
+
+  }
+  .box{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+  }
+
+  .box .box-item{
+      max-width: 50%;
+      flex-basis: 50%;
+  }
+
+  .img-container {
+    width: 640px;
+    height: 480px;
+    float: left;
+}
+
+.img-preview {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-left: 10px;
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { ImageCroppedEvent, ImageTransform , Dimensions} from 'ngx-image-cropper';
 @Component({
   selector: 'app-cropper',
@@ -21,6 +22,7 @@ export class CropperComponent  {
   imageLoaded() {
    
   }
+
   cropperReady(d: Dimensions) {
     console.log(this.transform);
     
@@ -37,12 +39,24 @@ export class CropperComponent  {
     };
 }
 
-zoomIn($event) {
-  console.log($event);
-    this.scale += .1;
-    this.transform = {
+async zoomIn($event) {
+
+  console.log(this.isOver);
+  if($event.deltaY>0){
+    this.scale += .02;
+   this.transform = {
         ...this.transform,
         scale: this.scale
     };
+  }
+  if($event.deltaY<0&& this.scale>=0){
+    this.scale -= .02;
+  
+    this.transform = {
+         ...this.transform,
+         scale: this.scale
+     };
+  }
+  console.log(this.scale);
 }
 }

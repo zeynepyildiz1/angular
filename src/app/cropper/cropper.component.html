@@ -1,19 +1,35 @@
-<p>cropper works!</p>
+<!-- <p>cropper works!</p>
 <input type="file" (change)="fileChangeEvent($event)" />
-
+<div class="box">
 <image-cropper
-
-   (wheel)="zoomIn($event)"
+(mouseenter)="isOver=true"
+(mouseleave)="isOver=false"
+    (wheel)="isOver?zoomIn($event):''"
     [imageChangedEvent]="imageChangedEvent"
     [maintainAspectRatio]="true"
-    [aspectRatio]="3 / 3"
+    [aspectRatio]="4 / 3"
     format="png"
     (imageCropped)="imageCropped($event)"
     (imageLoaded)="imageLoaded()"
     (cropperReady)="cropperReady($event)"
     (loadImageFailed)="loadImageFailed()"
+    [transform]="transform"
   
 ></image-cropper>
-
-
 <img [src]="croppedImage" />
+</div> -->
+
+<cropperjs></cropperjs>
+<p>cropper works!</p>
+<input type="file" (change)="fileChangeEvent($event)" />
+<div class="box">
+    <div class="box-item">
+        <image-cropper (mouseenter)="isOver=true" (mouseleave)="isOver=false" (wheel)="isOver?zoomIn($event):''"
+            [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4 / 3" format="png"
+            (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady($event)"
+            (loadImageFailed)="loadImageFailed()" [transform]="transform"></image-cropper>
+    </div>
+    <div class="box-item">
+        <img [src]="croppedImage" />
+    </div>
+</div>

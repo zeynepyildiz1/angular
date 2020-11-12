@@ -1,0 +1,23 @@
+<p>cropperjs works!</p>
+<div class="card" style="width: 18rem;">
+  
+    <div class="card-body">
+        <section>
+            <input type="file" accept="images/" (change)="onSelectFile($event)">
+        </section>
+        <section *ngIf="imageUrl">
+        <angular-cropper
+        (mouseenter)="isOver=true" (mouseleave)="isOver=false" (wheel)="isOver?zoomOut($event):''"
+         [cropperOptions]="config" #angularCropper [imageUrl]="imageUrl"></angular-cropper>
+        <div class="mt-2">
+            <button class="btn btn-primary" (click)=getCroppedImage()>Kırp</button>
+            <button class="btn btn-primary" (click)=rotateLeft()>rotate</button>
+        </div>
+        </section>
+        <section *ngIf="croppedresult">
+            <img [src]="croppedresult" alt="">
+        </section>
+    </div>
+  </div>
+
+  <br><br>

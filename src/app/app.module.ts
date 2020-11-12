@@ -9,15 +9,16 @@ import { FormsModule } from '@angular/forms';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import {HttpClientModule} from "@angular/common/http"
-
 import {AngularFireStorageModule} from "@angular/fire/storage";
-
-import { CropperComponent } from './cropper/cropper.component'
+import { CropperComponent } from './cropper/cropper.component';
+import { CropperjsComponent } from './cropperjs/cropperjs.component'
+import { AngularCropperjsModule } from 'angular-cropperjs';
 @NgModule({
   declarations: [
     AppComponent,
     ImageUploadComponent,
-    CropperComponent
+    CropperComponent,
+    CropperjsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,10 +27,11 @@ import { CropperComponent } from './cropper/cropper.component'
     FormsModule,
     HttpClientModule,
     AngularFireStorageModule,
-    ImageCropperModule
+    ImageCropperModule,
+    AngularCropperjsModule
   ],
   providers: [],
-  bootstrap: [CropperComponent]
+  bootstrap: [ImageUploadComponent]
 })
 export class AppModule { }
 
