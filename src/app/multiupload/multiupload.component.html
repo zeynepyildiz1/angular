@@ -1,0 +1,7 @@
+<p>multiupload works!</p>
+
+<div class="container text- center">
+   
+    <input type="file" (change)="onSelectFile($event)" multiple>
+    <img   *ngFor="let url of urls" [src]="url"  style="height:100px;width:80px;margin:2%;" >
+</div> 

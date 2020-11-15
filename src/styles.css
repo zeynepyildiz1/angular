@@ -29,3 +29,9 @@ image-cropper {
     float: left;
     margin-left: 10px;
 }
+.dene{
+    max-width: 200px;
+    max-height: 200px;
+    float: left;
+    margin-bottom:10px;
+}

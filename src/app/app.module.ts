@@ -13,12 +13,14 @@ import {AngularFireStorageModule} from "@angular/fire/storage";
 import { CropperComponent } from './cropper/cropper.component';
 import { CropperjsComponent } from './cropperjs/cropperjs.component'
 import { AngularCropperjsModule } from 'angular-cropperjs';
+import { MultiuploadComponent } from './multiupload/multiupload.component';
 @NgModule({
   declarations: [
     AppComponent,
     ImageUploadComponent,
     CropperComponent,
-    CropperjsComponent
+    CropperjsComponent,
+    MultiuploadComponent
   ],
   imports: [
     BrowserModule,

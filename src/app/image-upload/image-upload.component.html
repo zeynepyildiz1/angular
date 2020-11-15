@@ -4,24 +4,29 @@
 
 <button type="button" (click)="onUpload()">Upload</button>
 <br><br>
-<img [src]="url" height="200px">
-
-<input type="file" (change)="onResize($event)" accept="*.png.jpg"/>
-
-<input type="file" #coverFilesInput (change)="onChange($event)" class="file-input"  />
-    Upload Percent: {{percentDone}}% <br />
-
-    <ng-container *ngIf="uploadSuccess">
-      Upload Successful of file with size : {{size}} bytes <br>
-      The image height is : {{height}} <br>
-      The image width is : {{width}} <br>
-    </ng-container> 
 
 
+<input type="file" (change)="onResizer($event)"  accept="*.png.jpg"/>
 
 
+<table>
+    <tbody>
+  
+      <tr>
+        <td>Origal Img - <img id="original-Img"/></td>
+      </tr>
+       <tr>
+        <td>Compress Img - <img id="upload-Preview"/></td>
+      </tr>
+     
+    </tbody>
+  </table>
 
-
+<!--Multiupload -->
+<br>
+<br>
+<hr>
+<app-multiupload></app-multiupload>
 
 
 
